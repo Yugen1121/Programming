@@ -1,0 +1,18 @@
+body {
+    background-color: grey;
+    --light-mode-color: white;
+    --dark-mode-color: grey;
+}
+
+:root {
+    --nav-width--: 100vw;
+    --nav-height--: 12vh;
+}
+
+
+
+.navMain {
+    width: var(--nav-width--)!important;
+    height: var(--nav-height--)!important;
+    background-color: var(--dark-mode-color)!important;
+}
