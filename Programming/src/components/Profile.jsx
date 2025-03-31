@@ -21,4 +21,4 @@ function Profile(props){
     </>
 }
 
-export default profiles;
+export default Profile;
