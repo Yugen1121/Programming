@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-
+import Image from "./assets/react.svg"
 import "./Styles.css"
 
 function NavBar() {
@@ -26,7 +26,7 @@ function NavBar() {
           </Nav>
 
           <Nav className="ms-auto">
-            <NavDropdown title={( <img src="./assets/react.svg"/>)} id="basic-nav-dropdown">
+            <NavDropdown title={( <img src={Image}/>)} id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
                 Another action

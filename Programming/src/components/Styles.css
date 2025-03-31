@@ -1,12 +1,15 @@
 body {
-    background-color: grey;
-    --light-mode-color: white;
-    --dark-mode-color: grey;
+    background-color: grey
+    
+
 }
 
 :root {
     --nav-width--: 100vw;
     --nav-height--: 12vh;
+    --light-mode-color: white;
+    --dark-mode-color: grey;
+    --btn--width--1: 60vw;
 }
 
 
@@ -15,4 +18,19 @@ body {
     width: var(--nav-width--)!important;
     height: var(--nav-height--)!important;
     background-color: var(--dark-mode-color)!important;
+}
+
+.Lbtn{
+    min-width: var(--btn--width--1)!important;
+    width: inherit!important;
+}
+
+.H-F-card {
+    height:40vh;
+    width: 100vw;
+}
+
+.i-H-card {
+    height: 30vw;
+    width: 30vw;
 }
