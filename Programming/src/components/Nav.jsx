@@ -10,10 +10,13 @@ import BreathingHelper from './Breath';
 import BMI from './BMI';
 import Profile from './Profile';
 import CenterContainer from './Container';
+import Home from './Home';
+
 function NavBar() {
 
 
   const components = {
+    Home: {body: <Home />},
     Profile: {body: <Profile />, title: "Profile"},
     BMI: {body: <BMI />, title: "BMI Calculator"},
     Breathing: {body: <BreathingHelper />, title: "Breathing helper"}
@@ -28,7 +31,7 @@ function NavBar() {
   const reducer = (state, action)=>{
     switch(action.type){
       case "Home":
-        return components.Profile
+        return components.Home
       case "BMI":
         return components.BMI
       case "Breathing":
