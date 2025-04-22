@@ -11,7 +11,7 @@ import BMI from './BMI';
 import Profile from './Profile';
 import CenterContainer from './Container';
 import Home from './Home';
-
+import Login from './LOGIN';
 function NavBar() {
 
 
@@ -19,13 +19,16 @@ function NavBar() {
     Home: {body: <Home />},
     Profile: {body: <Profile />, title: "Profile"},
     BMI: {body: <BMI />, title: "BMI Calculator"},
-    Breathing: {body: <BreathingHelper />, title: "Breathing helper"}
+    Breathing: {body: <BreathingHelper />, title: "Breathing helper"},
+    Login: {body: <Login />, title: "LogIn"}
   }
 
   const functions = {
+    Profile: ()=>{updateState({type: "Profile"})},
     Home: ()=>{updateState({type: "Home"})},
     BMI: ()=>{updateState({type: "BMI"})},
-    Breathing: ()=>{updateState({type: "Breathing"})}
+    Breathing: ()=>{updateState({type: "Breathing"})},
+    Login: ()=>{updateState({type: "Login"})}
   }
 
   const reducer = (state, action)=>{
@@ -36,6 +39,10 @@ function NavBar() {
         return components.BMI
       case "Breathing":
         return components.Breathing
+      case "Profile":
+        return components.Profile
+      case "Login":
+        return components.Login
     }
   }
 
@@ -63,13 +70,13 @@ function NavBar() {
           <Nav className="ms-auto">
             <NavDropdown title={( <img src={Image}/>)} id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
+              <NavDropdown.Item onClick={functions.Profile}>
+                Profil
               </NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
+              <NavDropdown.Item onClick={functions.Login}>
+                login
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>

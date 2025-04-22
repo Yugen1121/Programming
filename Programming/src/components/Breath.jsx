@@ -13,21 +13,27 @@ function BreathingHelper(){
     //to change the text
     const [text, updateText] = useState("Click")
     useEffect(()=>{
+        // checks if the state is false if its false then it updates the vlaue of ll the state varibales to default
         if (!state){
             updateText("Click")
             updateScale(1)
             return
         };
+        // if the state is true then it runs the rest of the function 
         updateScale((prev)=>(prev === 1? 5: 1))
         updateText((prevtext)=>(prevtext === "Inhale" ? "Exhale": "Inhale"))
+        // to keep the function to run contineousky
         const interval = setInterval(()=>{
             updateScale((prev)=>(prev === 1? 5: 1))
             updateText((prevtext)=>(prevtext === "Inhale" ? "Exhale": "Inhale"))
         }, 4000)
 
+        // clears the interval
         return () => clearInterval(interval)
     }, [state])
 
+
+    // style for the circle.
     let Style = {
         width: "200px",
         height: "200px",
