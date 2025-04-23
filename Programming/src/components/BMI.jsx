@@ -31,6 +31,7 @@ function BMI() {
         updateBMI((weight/(height**2)).toFixed(2))
     }
 
+    // updates the image when the value of BMI changes
     useEffect(()=>{
         if (bmi > 21){
             updateImage(image1)
