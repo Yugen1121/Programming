@@ -12,25 +12,32 @@ import Profile from './Profile';
 import CenterContainer from './Container';
 import Home from './Home';
 import Login from './LOGIN';
+import Diseases from './Diseases';
+import Symptoms from './Symptoms';
+
 function NavBar() {
 
-
+  // holds all the components 
   const components = {
     Home: {body: <Home />},
     Profile: {body: <Profile />, title: "Profile"},
     BMI: {body: <BMI />, title: "BMI Calculator"},
     Breathing: {body: <BreathingHelper />, title: "Breathing helper"},
-    Login: {body: <Login />, title: "LogIn"}
+    Login: {body: <Login />, title: "LogIn"},
+    Diseases: {body: <Diseases />, title: "Diseases"}
   }
 
+  // holds all the function to update the state 
   const functions = {
     Profile: ()=>{updateState({type: "Profile"})},
     Home: ()=>{updateState({type: "Home"})},
     BMI: ()=>{updateState({type: "BMI"})},
     Breathing: ()=>{updateState({type: "Breathing"})},
-    Login: ()=>{updateState({type: "Login"})}
+    Login: ()=>{updateState({type: "Login"})},
+    Diseases: ()=>(updateState({type: "Diseases"}))
   }
 
+  // a reducer that takes a type and runs the component dictionary to return components
   const reducer = (state, action)=>{
     switch(action.type){
       case "Home":
@@ -43,6 +50,8 @@ function NavBar() {
         return components.Profile
       case "Login":
         return components.Login
+      case "Dieases":
+        return components.Diseases
     }
   }
 
@@ -53,14 +62,14 @@ function NavBar() {
     <Navbar expand="lg" className="bg-body-tertiary navMain">
       <Container>
         <div className='Brand'>
-          <Navbar.Brand href="#home">FitnessHub</Navbar.Brand>
+          <Navbar.Brand onClick={functions.Home}>FitnessHub</Navbar.Brand>
         </div>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link onClick={functions.Home}>Home</Nav.Link>
             <Nav.Link onClick={functions.BMI}>BMI</Nav.Link>
-            <Nav.Link>Symptom Checker</Nav.Link>
+            <Nav.Link onClick={functions.Diseases}>Symptom Checker</Nav.Link>
             <Nav.Link onClick={functions.Breathing}>Stress reliever</Nav.Link>
             <Nav.Link href="#link">Meal planner</Nav.Link>
             <Nav.Link href="#link">Scedule planner</Nav.Link>
@@ -69,11 +78,9 @@ function NavBar() {
 
           <Nav className="ms-auto">
             <NavDropdown title={( <img src={Image}/>)} id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item onClick={functions.Profile}>
-                Profil
+                Profile
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item onClick={functions.Login}>
                 login
