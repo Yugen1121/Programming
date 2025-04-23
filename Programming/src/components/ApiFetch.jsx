@@ -1,11 +1,6 @@
-function ApiFetch(link) {
-    return fetch(link, 
-      {
-    headers: {
-      'Authorization': 'Bearer 22f63d877828444b9ba61543b8e2b3fe', 
-    }
-  }
-    )
+function ApiFetch(link, dict) {
+
+    return fetch(link, dict)
       .then(response => {
         console.log(response)
         if (!response.ok) {
