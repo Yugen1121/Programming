@@ -13,6 +13,7 @@ function ApiFetch(link, dict) {
         throw error;
       });
   }
+
   
   export default ApiFetch;
   

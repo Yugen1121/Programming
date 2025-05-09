@@ -1,7 +1,79 @@
-body {
-    background-color: grey
-    
+/*
+Device	Width Range
+Mobile	max-width: 576px
+Tablets	max-width: 768px
+Small laptops	max-width: 992px
+Desktops	max-width: 1200px+
+*/
 
+@media (max-width: 900px) {
+  .cardMainContainer {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .Card {
+    width: 26rem !important
+  }
+  .Inp {
+    width: 26rem !important
+  }
+}
+
+@media (max-width: 768px) {
+  .opaque-nav-link {
+    color: white !important;
+    background-color: #343a40 !important;  
+    opacity: 1 !important;
+    border: 1px solid white !important;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 3px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .opaque-nav-link:hover {
+    background-color: #495057 !important;
+    color: #f8f9fa !important;
+  }
+  .cardMainContainer {
+    grid-template-columns: repeat(1, 1fr)!important;
+  }
+  .Card {
+    width: 22rem !important
+  }
+  .Inp {
+    width: 22rem !important
+  }
+}
+
+
+
+
+.Image2 {
+  width: 400px;
+  height: 400px;
+}
+
+.MainDiv {
+  width: 80vw;   
+  overflow-wrap: break-word; 
+  word-break: break-word;    
+  object-fit: contain;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  
+  
+}
+
+.Card {
+  width: 18rem; 
+  margin: 20px;
+  width: 36rem 
+}
+
+.Inp {
+  width: 32rem
 }
 
 .Breath{
@@ -18,12 +90,51 @@ body {
     --btn--width--1: 60vw;
 }
 
+body {
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(to bottom right, transparent 20%, black 80%);
+  background-attachment: fixed; 
+  background-repeat: no-repeat;   
+  background-size: cover; 
+}
 
+.stl1 {
+  background-color: white;
+  background: linear-gradient(to bottom right, transparent 0%, black 70%);
+  border: white;
+  
+}
+
+.stl1:hover {
+  background-color: white;
+}
+
+
+.stl2 {
+  background-color: white;
+  background: linear-gradient(to bottom right, transparent 40%, black 100%);
+  color: #d3d6db;
+  border: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+}
+
+.stl2:hover {
+  background-color: white;
+  background: linear-gradient(to bottom right, transparent 40%, black 90%);
+  border: none;
+  box-shadow: 0 4px 10px white;
+}
 
 .navMain {
     width: var(--nav-width--)!important;
     height: var(--nav-height--)!important;
-    background-color: var(--dark-mode-color)!important;
+    background-color: white!important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000; 
+    position: sticky;
+    top: 0;
+    margin-bottom: 30px;
 }
 
 .Lbtn{
@@ -65,175 +176,88 @@ body {
   color: white;
 }
 
+.breathing-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: black;
+}
 
-/*
+.circle {
+  width: 300px;
+  height: 300px;
+  background-color: cyan;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle, black 10%, black 50%)
+}
 
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(9, 1fr);
-    gap: 10px;
-    width: 100vw;
-    height: 100vh;
-    padding: 20px;
-    box-sizing: border-box;
-    transition: all 0.5s ease;
-    overflow: auto;
-  }
-  
+.breathing-text {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 20px;
+}
 
-  .box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 20px;
-    color: white;
-    background: #3498db;
-    transition: all 0.5s ease;
-    cursor: pointer;
-    box-sizing: border-box;
-    overflow: hidden;
-  }
 
-  .bmi-box {
-    background: #f39c12 !important;  
-  }
-  
-  /* Hover effect 
-  .box:hover {
-    transform: scale(1.05);
-  }
-  
-  /* 🌟 Layout 2: Menu with expanded content 
-  .container {
-    display: flex;
-    width: 100vw;
-    height: 100vh;
-    transition: all 0.5s ease;
-    overflow: hidden;
-  }
-  
-  /* Vertical Menu 
-  .menu-vertical {
-    display: flex;
-    flex-direction: column;
-    width: 20%;
-    height: 100%;
-    overflow-y: auto;
-    background: #f4f4f4;
-    border-right: 2px solid #ccc;
-    transition: all 0.5s ease;
-  }
-  
-  /* Menu Box 
-  .menu-box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100px;
-    color: white;
-    background: #3498db;
-    cursor: pointer;
-    border-bottom: 1px solid #ccc;
-    transition: 0.5s;
-  }
-  
-  /* Active Menu 
-  .menu-box.active {
-    background: #e74c3c;
-  }
-  
-  /* Expanded Content 
-  .content {
-    flex: 4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    background: #fff;
-    overflow: auto;
-  }
-  
-  /* 🌟 Layout 3: Full-screen Mode 
-  .fullscreen {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    background: #f1c40f;
-    color: #333;
-    overflow: auto;
-    transition: 0.5s;
-  }
-  
-  .fullscreen-content {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  /* Content Full-Screen 
-  .content-full {
-    width: 90%;
-    max-width: 1200px;
-    height: 80%;
-    overflow: auto;
-    padding: 20px;
-    background: white;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* 🌟 Sticky Buttons (top-right corner) 
-  .sticky-buttons {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    display: flex;
-    gap: 10px;
-    z-index: 1000;
-  }
-  
-  /* 🌟 Buttons 
-  .back-button, .fullscreen-btn {
-    padding: 10px 20px;
-    background: #3498db;
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  
-  .back-button:hover, .fullscreen-btn:hover {
-    background: #2980b9;
-  }
-  */
 
-  .breathing-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: #f0f8ff;
-  }
-  
-  .circle {
-    width: 300px;
-    height: 300px;
-    background-color: lightblue;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: radial-gradient(circle, rgba(255, 0, 0, 1) 10%, rgba(255, 0, 0, 0) 50%)
-  }
-  
-  .breathing-text {
 
-    font-size: 24px;
-    font-weight: bold;
-    margin-top: 20px;
-  }
+.cardMainContainer {
+  display: grid;
+  width: 100%;
+  padding: 1rem;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 16px; 
+}
+
+.cardContainer {
+  
+  width: 18rem;
+  height: 25rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.image {
+  height: 8rem;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.item {
+  flex: 1 1 200px; 
+  max-width: calc(33.33% - 20px);
+  margin: 10px; 
+  box-sizing: border-box;
+}
+
+.header {
+  font-size: 1.2rem;
+height: 2rem;
+overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+
+}
+
+.cardBody {
+  height: 4.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  margin: 0.5rem 0;
+
+}
+
+.link {
+  height: 2.5rem;
+flex-shrink: 0;
+}
